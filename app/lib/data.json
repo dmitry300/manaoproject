@@ -1,0 +1,23 @@
+[
+    {
+        "login": "fffffffff",
+        "password": "fffff6",
+        "confirm_password": "fffff6",
+        "email": "garist300@gmail.com",
+        "name": "ff"
+    },
+    {
+        "login": "eeeeee",
+        "password": "de6008c62fbe98076383c903334c110e3e492a4dce2524293",
+        "email": "garist500@gmail.com",
+        "name": "ee",
+        "salt": "de6008c62"
+    },
+    {
+        "login": "dmitry300",
+        "password": "d811a2310b571d8f1ffa7a5b6f767811d2d683135eeb9a6df",
+        "email": "garist400@gmail.com",
+        "name": "dm",
+        "salt": "d811a2310"
+    }
+]

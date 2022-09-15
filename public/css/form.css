@@ -1,0 +1,149 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    background-color: ghostwhite;
+    font-family: Arial, "Arial", sans-serif;
+}
+
+.form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px 0;
+
+}
+
+.form * {
+    outline: none;
+}
+
+.form_title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.form_label {
+    font-size: 18px;
+    display: block;
+    margin: 0 0 10px 0;
+}
+
+.form_item {
+    margin: 0 0 20px 0;
+}
+
+.form_input {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    background-color: yellowgreen;
+    color: ghostwhite;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.form_button:hover {
+    background-color: chartreuse;
+}
+
+.form_button:active {
+    box-shadow: 0 0 0 60px rgba(0, 0, 0, .05) inset;
+}
+
+.form_input._error {
+    box-shadow: 0 0 5px red;
+}
+
+.form_top-msg {
+    text-align: center;
+}
+
+.form_top-msg--err {
+    color: red;
+}
+
+.form_top-msg--success {
+    color: green;
+}
+
+.form_err-msg {
+    color: red;
+}
+
+.warn {
+    color: #ffffff;
+    background-color: #FF8080;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: .5em;
+    border: 1px solid;
+    padding: 12px;
+    width: 400px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.info {
+    color: #ffffff;
+    background-color: #79CFE0;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: .5em;
+    border: 1px solid;
+    padding: 12px;
+    width: 400px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.success {
+    color: #ffffff;
+    background-color: #7DDF7C;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: .5em;
+    border: 1px solid;
+    padding: 12px;
+    width: 400px;
+    text-align: center;
+    margin: 10px auto;
+}
