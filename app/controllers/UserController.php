@@ -3,9 +3,9 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\models\UserRepositoryImpl;
-use app\models\UserServiceImpl;
-use app\models\User;
+use app\models\repository\UserRepositoryImpl;
+use app\models\Service\UserServiceImpl;
+use app\models\entity\User;
 
 class UserController extends Controller
 {
@@ -67,7 +67,6 @@ class UserController extends Controller
                 $confirm_password = $decoded['confirm_password'];
                 $email = $decoded['email'];
                 $name = $decoded['name'];
-
                 $user = new User($login, $name, $email, $password);
                 $userService = new UserServiceImpl(new UserRepositoryImpl());
                 $error = $userService->validateRegister($login, $password, $confirm_password, $email, $name);

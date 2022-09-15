@@ -1,8 +1,8 @@
 <?php
 
-namespace app\models;
+namespace app\models\repository;
 
-use app\models\User;
+use app\models\entity\User;
 
 class UserRepositoryImpl implements UserRepository
 {
@@ -27,7 +27,7 @@ class UserRepositoryImpl implements UserRepository
         foreach ($data as $item) {
             if (strcasecmp($item['login'], $login) == 0) return $item;
         }
-
+        return null;
     }
 
 }

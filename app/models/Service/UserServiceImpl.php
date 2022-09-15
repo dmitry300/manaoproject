@@ -1,6 +1,10 @@
 <?php
 
-namespace app\models;
+namespace app\models\service;
+
+use app\models\entity\User;
+use app\models\repository\UserRepository;
+use app\models\repository\UserRepositoryImpl;
 
 class UserServiceImpl implements UserService
 {
@@ -19,7 +23,7 @@ class UserServiceImpl implements UserService
         $this->userRepository->create($user);
     }
 
-    public function validateRegister($login, $password, $confirm_password, $email, $name)
+    public function validateRegister($login, $password, $confirm_password, $email, $name): ?string
     {
         $input = [$email, $name, $password, $confirm_password, $login];
         foreach ($input as $val) {
@@ -42,9 +46,10 @@ class UserServiceImpl implements UserService
         if (!$this->checkEmailExists($email)) {
             return 'This email already exists!';
         }
+        return null;
     }
 
-    public function validateLogin($login, $password)
+    public function validateLogin($login, $password): ?string
     {
         if ($this->checkLoginExists($login)) {
             return 'This login not exists!';
@@ -52,6 +57,7 @@ class UserServiceImpl implements UserService
         if ($this->checkPasswordUser($password, $login)) {
             return 'Not correct password!';
         }
+        return null;
     }
 
     private function isPasswordEquals($password, $confirm_password): bool

@@ -1,8 +1,8 @@
 <?php
 
-namespace app\models;
+namespace app\models\entity;
 
-class User extends AbstractEntity
+class User
 {
     private $login;
     private $name;
