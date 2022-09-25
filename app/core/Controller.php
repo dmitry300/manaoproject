@@ -15,9 +15,11 @@ abstract class Controller
         $this->model = $this->loadModel($route['controller']);
     }
     public function loadModel($name) {
-        $path = 'application\models\\'.ucfirst($name);
+        $path = 'app\models\service\\'.ucfirst($name).'ServiceImpl';
         if (class_exists($path)) {
             return new $path;
+        }else {
+            return null;
         }
     }
 

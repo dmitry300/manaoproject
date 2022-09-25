@@ -3,24 +3,17 @@
 namespace app\models\service;
 
 use app\models\entity\User;
-use app\models\repository\UserRepository;
 use app\models\repository\UserRepositoryImpl;
 
-class UserServiceImpl implements UserService
+class UserServiceImpl  implements UserService
 {
-    private $userRepository;
-
-    public function __construct(UserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
 
     public function createUser(User $user)
     {
         $psw = $this->generateSaltHash($user->getPassword());
         $user->setPassword($psw['hashSaltPassword']);
         $user->setSalt($psw['salt']);
-        $this->userRepository->create($user);
+        (new UserRepositoryImpl())->create($user);
     }
 
     public function validateRegister($login, $password, $confirm_password, $email, $name): ?string
@@ -74,7 +67,7 @@ class UserServiceImpl implements UserService
 
     private function checkEmailExists($email): bool
     {
-        $data = (new UserRepositoryImpl)->findAll();
+        $data = (new UserRepositoryImpl())->findAll();
         foreach ($data as $item) {
             if (strcasecmp($item['email'], $email) == 0) return false;
         }
@@ -83,7 +76,7 @@ class UserServiceImpl implements UserService
 
     private function checkLoginExists($login): bool
     {
-        $data = (new UserRepositoryImpl)->findAll();
+        $data = (new UserRepositoryImpl())->findAll();
         foreach ($data as $item) {
             if (strcasecmp($item['login'], $login) == 0) return false;
         }
@@ -108,7 +101,7 @@ class UserServiceImpl implements UserService
 
     public function findUserByLogin($login)
     {
-        return $this->userRepository->findUserByLogin($login);
+        return (new UserRepositoryImpl())->findUserByLogin($login);
     }
 
 }

@@ -4,7 +4,7 @@ namespace app\models\repository;
 
 use app\models\entity\User;
 
-class UserRepositoryImpl implements UserRepository
+class UserRepositoryImpl  implements UserRepository
 {
     private $file = 'app/lib/data.json';
 

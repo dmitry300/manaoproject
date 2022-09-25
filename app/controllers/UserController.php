@@ -3,8 +3,6 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\models\repository\UserRepositoryImpl;
-use app\models\Service\UserServiceImpl;
 use app\models\entity\User;
 
 class UserController extends Controller
@@ -35,10 +33,9 @@ class UserController extends Controller
                 }
                 $login = $decoded['login'];
                 $password = $decoded['password'];
-                $userService = new UserServiceImpl(new UserRepositoryImpl());
-                $error = $userService->validateLogin($login, $password);
+                $error = $this->model->validateLogin($login, $password);
                 if (!isset($error)) {
-                    $_SESSION['userName'] = $userService->findUserByLogin($login)['name'];
+                    $_SESSION['userName'] = $this->model->findUserByLogin($login)['name'];
                     $this->view->redirect('/manaoproject');
                 } else {
                     $this->view->message(404, $error);
@@ -68,10 +65,9 @@ class UserController extends Controller
                 $email = $decoded['email'];
                 $name = $decoded['name'];
                 $user = new User($login, $name, $email, $password);
-                $userService = new UserServiceImpl(new UserRepositoryImpl());
-                $error = $userService->validateRegister($login, $password, $confirm_password, $email, $name);
+                $error = $this->model->validateRegister($login, $password, $confirm_password, $email, $name);
                 if (!isset($error)) {
-                    $userService->createUser($user);
+                    $this->model->createUser($user);
                     $this->view->redirect('/manaoproject/user/login');
                 } else {
                     $this->view->message(404, $error);

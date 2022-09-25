@@ -15,7 +15,6 @@ class View
     }
 
     public function render($title) {
-//        extract($vars);
         $path = 'app/views/'.$this->path.'.php';
         if (file_exists($path)) {
             ob_start();
@@ -41,7 +40,4 @@ class View
         exit(json_encode(['status' => $status, 'message' => $message]));
     }
 
-    public function location($url) {
-        exit(json_encode(['url' => $url]));
-    }
 }
