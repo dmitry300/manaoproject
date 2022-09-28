@@ -13,7 +13,7 @@ class UserController extends Controller
             unset($_SESSION['userName']);
             session_destroy();
         }
-        $this->view->redirect('/manaoproject');
+        $this->view->redirect('/');
     }
 
     public function loginAction()
@@ -36,7 +36,7 @@ class UserController extends Controller
                 $error = $this->model->validateLogin($login, $password);
                 if (!isset($error)) {
                     $_SESSION['userName'] = $this->model->findUserByLogin($login)['name'];
-                    $this->view->redirect('/manaoproject');
+                    $this->view->redirect('/');
                 } else {
                     $this->view->message(404, $error);
                 }
@@ -68,7 +68,7 @@ class UserController extends Controller
                 $error = $this->model->validateRegister($login, $password, $confirm_password, $email, $name);
                 if (!isset($error)) {
                     $this->model->createUser($user);
-                    $this->view->redirect('/manaoproject/user/login');
+                    $this->view->redirect('/user/login');
                 } else {
                     $this->view->message(404, $error);
                 }

@@ -26,7 +26,7 @@ class UserServiceImpl  implements UserService
         }
         if (!strlen($password) >= 6 || !strlen($login) >= 6
             || !preg_match('/^[а-яёa-z]{2}+$/i', $name)
-            || !preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i', $email)
+            || !filter_var($email,FILTER_VALIDATE_EMAIL)
             || !preg_match('/(?=.*[0-9])(?=.*[a-zа-яё])/i', $password)) {
             return 'One or more fields are not valid!';
         }

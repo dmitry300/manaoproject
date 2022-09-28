@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <p><b>Ошибка 404</b>. Страница не найдена</p>
-    <p><a href="/manaoproject">Перейти на главную</a></p>
+    <p><a href="">Перейти на главную</a></p>
 </div>
 </body>
 </html>
