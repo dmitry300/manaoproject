@@ -2,7 +2,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../public/css/form.css">
     <link rel="stylesheet" href="../public/css/index.css">
-    <noscript><meta http-equiv="refresh" content="0; url=/manaoproject" /></noscript>
+    <noscript><meta http-equiv="refresh" content="0; url=/" /></noscript>
 </head>
 <body>
 <div class="wrapper">
