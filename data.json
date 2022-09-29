@@ -19,5 +19,12 @@
         "email": "garist400@gmail.com",
         "name": "dm",
         "salt": "d811a2310"
+    },
+    {
+        "login": "ff",
+        "password": "08f014dd62b3c9c2e1eba01c0cc1bdf70c114b2a2c915c59d",
+        "email": "garist6600@gmail.com",
+        "name": "aa",
+        "salt": "08f014dd6"
     }
 ]

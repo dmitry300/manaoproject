@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             if (input.classList.contains('_login')) {
-                if (input.value.length < 6) {
+                if (input.value.length < 6 || hasWhiteSpace(input.value)) {
                     formAddError(input);
                     loginInput.insertAdjacentHTML('beforebegin', `<p
                          class="form_err-msg">The field «Login» must consist >= 6 characters!</p>`);
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             if (input.classList.contains('_password')) {
-                if (input.value.toString().length < 6) {
+                if (input.value.trim().length < 6 || hasWhiteSpace(input.value)) {
                     formAddError(input);
                     passwordInput.insertAdjacentHTML('beforebegin', `<p
                          class="form_err-msg">The field «Password» must consist >= 6 characters!</p>`);
@@ -122,4 +122,7 @@ function formAddError(input) {
 function formRemoveError(input) {
     input.parentElement.classList.remove('_error');
     input.classList.remove('_error');
+}
+function hasWhiteSpace(s) {
+    return /\s/g.test(s);
 }

@@ -1,3 +1,7 @@
+<Files ~ "\.json$">
+  Order allow,deny
+  Deny from all
+</Files>
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
